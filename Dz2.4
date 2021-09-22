@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    vector<int> a = { };
+    int x,b,i=0;
+    cout << "Сколько чисел вы хотите добавить в вектор: ";
+    cin >> b;
+    while (i<b)
+    {
+        i++;
+        cin >> x; 
+        a.push_back(x);  
+    }
+    int z=0,y=b-1,d,f;
+    cout << "Введите число: ";
+    cin >> f;
+    while (z<=y)
+    {
+        d = floor((z+y)/2);
+        if (a[d] < f)
+        {
+            z = d + 1;
+        }
+        else if (a[d]>f)
+        {
+            y = d - 1;
+        }
+        else 
+        {
+            cout << "Число найдено";
+            break;
+        }
+    }
+    if (z>y)
+    {
+        cout << "Число не найдено";
+    }
+
+    return 0;
+}
