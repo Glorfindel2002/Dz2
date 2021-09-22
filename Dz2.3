@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector> 
+
+using namespace std;
+
+int main()
+{
+    vector<int> a = { };
+    int x,b,i=0;
+    cout << "Сколько чисел вы хотите добавить в вектор: ";
+    cin >> b;
+    while (i<b)
+    {
+        i++;
+        cin >> x; 
+        a.push_back(x);  
+    }
+    //cout << a[1];
+    
+    for (int j=1;j < b; j++)
+    {
+        i = j;
+        for (int z = i-1;z >= 0; z--)
+        {
+            if (a[i] < a[z])
+            {
+                swap(a[i],a[z]);
+                i--;
+            }
+        }
+    }
+    for (int j=0;j < b; j++)
+    {
+        cout << a[j] << " ";
+    }
+    
+
+    return 0;
+}
